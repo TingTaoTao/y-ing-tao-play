@@ -66,7 +66,7 @@ public class LivePlayActivity extends AppCompatActivity {
                 .setScaleType(PlayStateParams.fitparent)
                 .hideMenu(true)
                 .hideSteam(true)
-                .setForbidDoulbeUp(true)
+                .setForbidDoulbeUp(false)//是否可以双击，双击可以切换横竖屏
                 .hideCenterPlayer(true)
                 .hideControlPanl(true)
                 .hideHideTopBar(false)
