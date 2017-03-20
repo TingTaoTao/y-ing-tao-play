@@ -27,4 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/video_play"
         android:text="ijkplay"/>
+    <Button
+        android:id="@+id/live_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ijk_play"
+        android:text="liveplay"/>
 </RelativeLayout>
