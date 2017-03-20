@@ -2,6 +2,7 @@ package com.yt.ijkpalyer_view.ijkplay.activity;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
@@ -17,6 +18,7 @@ import com.yt.ijkpalyer_view.ijkplay.bean.VideoijkBean;
 import com.yt.ijkpalyer_view.ijkplay.listener.OnShowThumbnailListener;
 import com.yt.ijkpalyer_view.ijkplay.manager.IjkPlayManager;
 import com.yt.ijkpalyer_view.ijkplay.manager.PlayStateParams;
+import com.yt.ijkpalyer_view.ijkplay.utils.MediaUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -100,11 +102,11 @@ public class IjkPlayActivity extends AppCompatActivity {
                 .showThumbnail(new OnShowThumbnailListener() {
                     @Override
                     public void onShowThumbnail(ImageView ivThumbnail) {
-//                        Glide.with(mContext)
-//                                .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
-//                                .placeholder(R.color.cl_default)
-//                                .error(R.color.cl_error)
-//                                .into(ivThumbnail);
+                        Glide.with(mContext)
+                                .load("http://pic2.nipic.com/20090413/406638_125424003_2.jpg")
+                                .placeholder(R.color.cl_default)
+                                .error(R.color.cl_error)
+                                .into(ivThumbnail);
                     }
                 })
                 .setPlaySource(list)
@@ -120,5 +122,57 @@ public class IjkPlayActivity extends AppCompatActivity {
         String sdCard = Environment.getExternalStorageDirectory().getPath();
         String uri = sdCard + File.separator + name;
         return uri;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (player != null){
+            player.onResume();
+        }
+        /**demo的内容，暂停系统其它媒体的状态*/
+        MediaUtils.muteAudioFocus(mContext, false);
+        /**demo的内容，激活设备常亮状态*/
+        if (wakeLock != null) {
+            wakeLock.acquire();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (player != null) {
+            player.onPause();
+        }
+        /**demo的内容，恢复系统其它媒体的状态*/
+        MediaUtils.muteAudioFocus(mContext, true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (player != null) {
+            player.onDestroy();
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (player != null) {
+            player.onConfigurationChanged(newConfig);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (player != null && player.onBackPressed()) {
+            return;
+        }
+        super.onBackPressed();
+        /**demo的内容，恢复设备亮度状态*/
+        if (wakeLock != null) {
+            wakeLock.release();
+        }
     }
 }

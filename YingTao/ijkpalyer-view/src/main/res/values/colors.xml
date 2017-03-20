@@ -19,4 +19,7 @@
     <color name="simple_player_stream_name_playing">#ff0043bd</color>
     <color name="simple_player_stream_name_normal">#ffffffff</color>
 
+    <color name="cl_default">#424242</color>
+    <color name="cl_error">#ffffff</color>
+
 </resources>
