@@ -19,7 +19,7 @@ public class ZZPlayerDemoActivity extends Activity {
     private String mVideoUrl;
 
     private String url = "http://7xt0mj.com2.z0.glb.clouddn.com/lianaidaren.v.640.480.mp4";
-    private String url_1 = "";
+    private String url_1 = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class ZZPlayerDemoActivity extends Activity {
 
     private void initData() {
         //        mVideoUrl = "android.resource://" + getPackageName() + "/" + R.raw.shuai_dan_ge;
-        mVideoUrl = url;
+        mVideoUrl = url_1;
     }
 
     private void initView() {
