@@ -17,8 +17,15 @@
             android:configChanges="keyboard|orientation|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".ijkplay.activity.LivePlayActivity"
             android:configChanges="keyboard|orientation|screenSize"/>
+
+        <activity android:name=".ijkplay.activity.OriginPlayActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
 
     </application>
 

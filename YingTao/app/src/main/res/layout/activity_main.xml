@@ -33,4 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/ijk_play"
         android:text="liveplay"/>
+    <Button
+        android:id="@+id/origin_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/live_play"
+        android:text="origin_play"/>
 </RelativeLayout>
