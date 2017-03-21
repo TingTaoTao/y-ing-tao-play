@@ -16,7 +16,7 @@ import com.yt.ijkpalyer_view.ijkplay.manager.PlayStateParams;
 import com.yt.ijkpalyer_view.ijkplay.utils.MediaUtils;
 
 /**
- * Created by Administrator on 2017/3/21.
+ * Created by jiatao on 2017/3/21.
  */
 
 public class OriginPlayActivity extends AppCompatActivity {

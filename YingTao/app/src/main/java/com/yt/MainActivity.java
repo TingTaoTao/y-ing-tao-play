@@ -9,6 +9,7 @@ import com.yt.ijkpalyer_view.ijkplay.activity.IjkPlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.LivePlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.OriginPlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.PlayerActivity;
+import com.yt.ijkpalyer_view.ijkplay.activity.VerPlayActivity;
 import com.yt.ijkpalyer_view.videoplay.activity.ZZPlayerDemoActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OriginPlayActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.ver_play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VerPlayActivity.class);
                 startActivity(intent);
             }
         });
