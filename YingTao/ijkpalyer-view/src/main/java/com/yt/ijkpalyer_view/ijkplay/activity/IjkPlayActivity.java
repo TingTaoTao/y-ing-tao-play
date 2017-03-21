@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -28,7 +28,7 @@ import java.util.List;
  * Created by jiatao on 2017/3/20.
  */
 
-public class IjkPlayActivity extends AppCompatActivity {
+public class IjkPlayActivity extends FragmentActivity {
 
     private IjkPlayManager player;
     private Context mContext;

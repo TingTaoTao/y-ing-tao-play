@@ -5,7 +5,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -19,7 +19,7 @@ import com.yt.ijkpalyer_view.ijkplay.utils.MediaUtils;
  * Created by jiatao on 2017/3/21.
  */
 
-public class OriginPlayActivity extends AppCompatActivity {
+public class OriginPlayActivity extends FragmentActivity {
 
     private IjkPlayManager player;
     private Context mContext;

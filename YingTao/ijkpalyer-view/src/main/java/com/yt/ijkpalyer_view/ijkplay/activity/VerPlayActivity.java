@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,7 +20,7 @@ import com.yt.ijkpalyer_view.ijkplay.manager.PlayStateParams;
  * 竖屏全屏播放
  */
 
-public class VerPlayActivity extends AppCompatActivity {
+public class VerPlayActivity extends FragmentActivity {
     private IjkPlayManager player;
     private Context mContext;
     private View rootView;

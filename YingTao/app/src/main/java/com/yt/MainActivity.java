@@ -1,7 +1,7 @@
 package com.yt;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,7 +12,7 @@ import com.yt.ijkpalyer_view.ijkplay.activity.PlayerActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.VerPlayActivity;
 import com.yt.ijkpalyer_view.videoplay.activity.ZZPlayerDemoActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -27,4 +27,17 @@
         <item name="android:paddingRight">15.0dip</item>
 
     </style>
+
+    <style name="YT_LiveHouseStyle" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:actionBarSize">0dip</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:dialogTheme">@style/YT_MyDialog</item>
+    </style>
+    <style name="YT_MyDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>

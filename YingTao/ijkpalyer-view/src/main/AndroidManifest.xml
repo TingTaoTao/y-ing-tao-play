@@ -27,7 +27,8 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".ijkplay.activity.VerPlayActivity"
-            android:configChanges="keyboard|orientation|screenSize"/>
+            android:configChanges="keyboard|orientation|screenSize"
+            android:theme="@style/YT_LiveHouseStyle"/>
 
     </application>
 

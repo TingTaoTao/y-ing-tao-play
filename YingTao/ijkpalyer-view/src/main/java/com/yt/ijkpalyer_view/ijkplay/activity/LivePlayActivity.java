@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -25,7 +25,7 @@ import java.util.List;
  * 直播
  */
 
-public class LivePlayActivity extends AppCompatActivity {
+public class LivePlayActivity extends FragmentActivity {
 
     private IjkPlayManager player;
     private Context mContext;
