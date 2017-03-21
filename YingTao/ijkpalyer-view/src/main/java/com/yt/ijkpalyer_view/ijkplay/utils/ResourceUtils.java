@@ -8,24 +8,7 @@ import android.util.Log;
 import android.view.WindowManager;
 
 /**
- * ========================================
- * <p>
- * 版 权：jjdxmashl 版权所有 （C） 2015
- * <p>
- * 作 者：陈冠明
- * <p>
- * 个人网站：http://www.dou361.com
- * <p>
- * 版 本：1.0
- * <p>
- * 创建日期：2015/12/26 0:15
- * <p>
  * 描 述：资源文件ID获取工具
- * <p>
- * <p>
- * 修订历史：
- * <p>
- * ========================================
  */
 public class ResourceUtils {
     private static final String TAG = ResourceUtils.class.getSimpleName();
