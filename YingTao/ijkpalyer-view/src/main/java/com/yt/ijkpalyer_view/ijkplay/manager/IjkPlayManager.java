@@ -147,6 +147,10 @@ public class IjkPlayManager {
      */
     private final ListView streamSelectListView;
     /**
+     * 缓冲Loading
+     */
+    private final LinearLayout appVideoLoading;
+    /**
      * 不同分辨率的适配器
      */
     private final StreamSelectAdapter streamSelectAdapter;
@@ -590,6 +594,7 @@ public class IjkPlayManager {
             brightnessControllerContainer = mActivity.findViewById(R.id.simple_player_brightness_controller_container);
             brightnessController = (SeekBar) mActivity.findViewById(R.id.simple_player_brightness_controller);
             brightnessController.setMax(100);
+            appVideoLoading = (LinearLayout) mActivity.findViewById(R.id.app_video_loading);
         } else {
             query = new LayoutQuery(mActivity, rootView);
             rl_box = rootView.findViewById(R.id.app_video_box);
@@ -605,6 +610,7 @@ public class IjkPlayManager {
             brightnessControllerContainer = rootView.findViewById(R.id.simple_player_brightness_controller_container);
             brightnessController = (SeekBar) rootView.findViewById(R.id.simple_player_brightness_controller);
             brightnessController.setMax(100);
+            appVideoLoading = (LinearLayout) rootView.findViewById(R.id.app_video_loading);
         }
 
         try {
@@ -1570,7 +1576,7 @@ public class IjkPlayManager {
                 public void run() {
                     hideStatusUI();
                     /**显示控制bar*/
-                    isShowControlPanl = false;
+                    isShowControlPanl = true;
                     if (!isForbidTouch) {
                         operatorPanl();
                     }
@@ -1708,13 +1714,14 @@ public class IjkPlayManager {
      * 隐藏状态界面
      */
     private void hideStatusUI() {
-        iv_player.setVisibility(View.GONE);
+//        iv_player.setVisibility(View.GONE);
+        appVideoLoading.setVisibility(View.GONE);
         query.id(R.id.simple_player_settings_container).gone();
         query.id(R.id.simple_player_select_stream_container).gone();
         query.id(R.id.app_video_replay).gone();
         query.id(R.id.app_video_netTie).gone();
         query.id(R.id.app_video_freeTie).gone();
-        query.id(R.id.app_video_loading).gone();
+//        query.id(R.id.app_video_loading).gone();
         if (onControlPanelVisibilityChangeListener != null) {
             onControlPanelVisibilityChangeListener.change(false);
         }
@@ -2081,6 +2088,15 @@ public class IjkPlayManager {
             if (!isForbidTouch) {
                 operatorPanl();
             }
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    //TODO 当显示出操作面板时，过一会消失
+                    if (isShowControlPanl){
+                        operatorPanl();
+                    }
+                }
+            },1500);
             return true;
         }
     }
