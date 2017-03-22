@@ -686,6 +686,13 @@ public class IjkPlayManager {
                 return true;
             }
         });
+        //播放器播放完成回调
+        videoView.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(IMediaPlayer mp) {
+                statusChange(PlayStateParams.STATE_COMPLETED);
+            }
+        });
         this.streamSelectAdapter = new StreamSelectAdapter(mContext, listVideos);
         this.streamSelectListView.setAdapter(this.streamSelectAdapter);
         this.streamSelectListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
