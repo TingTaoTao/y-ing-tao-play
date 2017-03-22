@@ -11,6 +11,7 @@ import com.yt.ijkpalyer_view.ijkplay.activity.OriginPlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.PlayerActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.VerPlayActivity;
 import com.yt.ijkpalyer_view.videoplay.activity.ZZPlayerDemoActivity;
+import com.yt.ijkplayer_self.ijkplay.activity.SelfPlayActivity;
 
 public class MainActivity extends FragmentActivity {
 
@@ -63,6 +64,14 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, VerPlayActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.self_play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelfPlayActivity.class);
                 startActivity(intent);
             }
         });

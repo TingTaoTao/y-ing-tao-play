@@ -1,3 +1,3 @@
-include ':app'
+include ':app', ':ijkplayer-self'
 include ':ijkplayer-java'
 include ':ijkpalyer-view'
