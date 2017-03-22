@@ -3,10 +3,15 @@ package com.yt.ijkplayer_self.ijkplay.activity;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.format.Formatter;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yt.ijkplayer_self.R;
 import com.yt.ijkplayer_self.ijkplay.manager.GiraffePlayer;
+
+import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 /**
  * Created by jiatao on 2017/3/22.
@@ -29,6 +34,31 @@ public class SelfPlayActivity extends Activity {
             @Override
             public void run() {
                 Toast.makeText(getApplicationContext(), "video play completed",Toast.LENGTH_SHORT).show();
+            }
+        });
+        player.onInfo(new GiraffePlayer.OnInfoListener() {
+            @Override
+            public void onInfo(int what, int extra) {
+                switch (what) {
+                    case IMediaPlayer.MEDIA_INFO_BUFFERING_START:
+                        //do something when buffering start
+                        //在缓冲启动时做一些事情
+                        break;
+                    case IMediaPlayer.MEDIA_INFO_BUFFERING_END:
+                        //do something when buffering end
+                        //缓冲结束时做一些事情
+                        break;
+                    case IMediaPlayer.MEDIA_INFO_NETWORK_BANDWIDTH:
+                        //download speed
+                        //下载速度
+//                        ((TextView) findViewById(R.id.tv_speed)).setText(Formatter.formatFileSize(getApplicationContext(),extra)+"/s");
+                        break;
+                    case IMediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START:
+                        //do something when video rendering
+                        //视频渲染时做一些事情
+//                        findViewById(R.id.tv_speed).setVisibility(View.GONE);
+                        break;
+                }
             }
         });
         player.onError(new GiraffePlayer.OnErrorListener() {//视频播放出错
