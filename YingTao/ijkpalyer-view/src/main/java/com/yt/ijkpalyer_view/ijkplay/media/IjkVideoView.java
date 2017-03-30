@@ -20,6 +20,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -944,6 +945,18 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
                 break;
             }
         }
+    }
+
+    /**
+     * 获取当前截屏
+     * @return
+     */
+    public Bitmap getBitmap(){
+        if (mRenderView!=null){
+            if (mRenderView instanceof TextureRenderView&&mMediaPlayer!=null)
+                return ((TextureRenderView) mRenderView).getBitmap(mMediaPlayer.getVideoWidth(),mMediaPlayer.getVideoHeight());
+        }
+        return null;
     }
 }
 

@@ -33,7 +33,8 @@ public class LivePlayActivity extends FragmentActivity {
 //    private List<LiveBean> list;
     private String url = "http://hdl.9158.com/live/744961b29380de63b4ff129ca6b95849.flv";
 
-    private String url1 = "rtmp://203.207.99.19:1935/live/CCTV1";
+    private String url1 = "rtmp://203.207.99.19:1935/live/CCTV2";
+    private String url2 = "http://zv.3gv.ifeng.com/live/zhongwen800k.m3u8";
 
     private String title = "标题";
     private PowerManager.WakeLock wakeLock;
@@ -82,7 +83,7 @@ public class LivePlayActivity extends FragmentActivity {
                     }
                 });
 
-        player.setPlaySource(url1)
+        player.setPlaySource(url2)
                 .startPlay();
 
         new Thread() {

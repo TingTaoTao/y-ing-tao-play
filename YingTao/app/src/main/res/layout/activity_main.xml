@@ -53,4 +53,10 @@
         android:layout_below="@id/live_play"
         android:layout_toRightOf="@id/ver_play"
         android:text="self_play"/>
+    <Button
+        android:id="@+id/list_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/origin_play"
+        android:text="list_play" />
 </RelativeLayout>
