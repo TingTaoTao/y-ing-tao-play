@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yt.camera_view.activity.CameraActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.IjkPlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.LivePlayActivity;
 import com.yt.ijkpalyer_view.ijkplay.activity.OriginPlayActivity;
@@ -81,6 +82,14 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, IjkMediaListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.camera_record).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(intent);
             }
         });
