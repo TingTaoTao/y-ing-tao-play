@@ -71,8 +71,8 @@ public class JCameraView extends RelativeLayout implements SurfaceHolder.Callbac
 
 
     private int SELECTED_CAMERA = -1;
-    private int CAMERA_POST_POSITION = -1;
-    private int CAMERA_FRONT_POSITION = -1;
+    private int CAMERA_POST_POSITION = -1;//后置摄像头
+    private int CAMERA_FRONT_POSITION = -1;//前置摄像头
 
     private CameraViewListener cameraViewListener;
 
@@ -424,9 +424,10 @@ public class JCameraView extends RelativeLayout implements SurfaceHolder.Callbac
     }
 
     public void onResume() {
+        Log.i(TAG, "JCameraView onResume");
         mCamera = getCamera(SELECTED_CAMERA);
         if (mCamera != null) {
-//            setStartPreview(mCamera, mHolder);
+            setStartPreview(mCamera, mHolder);
         } else {
             Log.i(TAG, "Camera is null!");
         }
@@ -544,12 +545,12 @@ public class JCameraView extends RelativeLayout implements SurfaceHolder.Callbac
             // 找到了前置摄像头
             if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
                 CAMERA_FRONT_POSITION = info.facing;
-                Log.i(TAG, "POSITION = " + CAMERA_FRONT_POSITION);
+                Log.i(TAG, "前置POSITION = " + CAMERA_FRONT_POSITION);
             }
             // 找到了后置摄像头
             if (info.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
                 CAMERA_POST_POSITION = info.facing;
-                Log.i(TAG, "POSITION = " + CAMERA_POST_POSITION);
+                Log.i(TAG, "后置POSITION = " + CAMERA_POST_POSITION);
             }
         }
     }
